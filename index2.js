@@ -87,7 +87,8 @@ console.log("--------------------------------------------------------");
 	// 目標：[0, 1, 2, 3, 4, 5]
 	const array = [[0, 1], [2, 3], [4, 5]]
 
-	//別解 console.log(array.flat());
+	//別解１ console.log(array.flat());
+	//別解２ console.log([].concat(...array));
 
 	const result = array.reduce((acc, i) => {
 		return acc.concat(i);
