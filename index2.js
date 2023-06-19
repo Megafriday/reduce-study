@@ -82,6 +82,21 @@ console.log("--------------------------------------------------------");
 }
 
 console.log("--------------------------------------------------------");
+{
+	// 目標：{ apple: 3, banana: 1, orange: 1, grape: 1 }
+	const words = ["apple", "banana", "orange", "apple", "grape", "apple"];
+
+	const result = words.reduce((acc, i) => {
+		if (!acc[i]) acc[i] = 0;
+
+		acc[i] += 1;
+		return acc;
+	}, {});
+
+	console.log(result);
+}
+
+console.log("--------------------------------------------------------");
 
 {
 	// 目標：[0, 1, 2, 3, 4, 5]
@@ -119,9 +134,7 @@ console.log("--------------------------------------------------------");
 	// 別解 console.log([...new Set(array)]);
 
 	const result = array.reduce((acc, i) => {
-		if (!acc.includes(i)) {
-			acc.push(i);
-		}
+		if (!acc.includes(i)) acc.push(i);
 		return acc;
 	}, []);
 
