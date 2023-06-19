@@ -67,16 +67,16 @@ console.log("--------------------------------------------------------");
 	];
 
 	let count = 0;
-	const result = array.reduce((previous, current) => {
-		const rows = current.samples.map((sample) => {
+	const result = array.reduce((acc, i) => {
+		const rows = i.samples.map((sample) => {
 			return {
-				dataFrom: `${current.dateFrom}`,
-				dataTo: `${current.dateTo}`,
+				dataFrom: `${i.dateFrom}`,
+				dataTo: `${i.dateTo}`,
 				index: count++,
 				sample: sample
 			};
 		});
-		return previous.concat(...rows);
+		return acc.concat(...rows);
 	}, []);
 
 
