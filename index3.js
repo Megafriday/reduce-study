@@ -84,3 +84,37 @@ console.log("--------------------------------------------------------");
 }
 
 console.log("--------------------------------------------------------");
+
+// https://qiita.com/rokumura7/items/cdfc92dba508bbfb6127
+
+{
+	// 目標 price * amount の合計値を求める 4350
+	const items = [
+		{ id: 1, price: 100, amount: 20 },
+		{ id: 2, price: 1000, amount: 2 },
+		{ id: 3, price: 350, amount: 1 },
+	];
+
+	const result = items.reduce((acc, i) => acc += i.price * i.amount, 0);
+	console.log(result);
+}
+
+console.log("--------------------------------------------------------");
+
+{
+	// 目標 { "日本語": "Japanese", "英語": "English", "中国語": "Chinese" }
+	const languages = [
+		{ jp: '日本語', en: 'Japanese' },
+		{ jp: '英語', en: 'English' },
+		{ jp: '中国語', en: 'Chinese' },
+	];
+
+	const result = languages.reduce((acc, i) => {
+		acc[i.jp] = i.en;
+		return acc;
+	}, {});
+
+	console.log(result);
+}
+
+console.log("--------------------------------------------------------");
